@@ -1,6 +1,7 @@
 import React from 'react';
 import useFormData from 'hooks/useFormData';
 import Input from 'components/Input';
+import ButtonForm from 'components/ButtonForm';
 
 const CrearEmpresa = () => {
   const { form, updateFormData } = useFormData();
@@ -12,7 +13,7 @@ const CrearEmpresa = () => {
   return (
     <div className='flex flex-col p-10 items-center'>
       <h1 className='text-2xl font-bold text-gray-800 my-4'>
-        Ingresa tu información personal
+        Ingresa la información de la empresa
       </h1>
       <form
         ref={form}
@@ -28,9 +29,7 @@ const CrearEmpresa = () => {
             type='text'
           />
         </div>
-        <button className='button-submit' type='submit'>
-          Enviar Formulario
-        </button>
+        <ButtonForm text='Crear empresa' />
       </form>
     </div>
   );

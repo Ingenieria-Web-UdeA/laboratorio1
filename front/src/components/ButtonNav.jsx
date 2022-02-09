@@ -8,8 +8,8 @@ import { NavLink } from 'react-router-dom';
 const ButtonNav = ({ name, ruta }) => (
   <NavLink to={ruta}>
     <div className='flex flex-row gap-x-3 my-2 px-2 rounded-[5px] hover:bg-gray-500 cursor-pointer'>
-      <span className='my-2 text-[20px] text-white'>{name}</span>
-      <img className='fill-white' src={Image} width='20' height='20' />
+      <span className='my-2 text-[20px] text-colorBlanco'>{name}</span>
+      <img className='stroke-colorBlanco' src={Image} width='20' height='20' />
     </div>
   </NavLink>
 );
