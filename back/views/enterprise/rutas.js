@@ -5,11 +5,11 @@ const { PrismaClient } = pkg;
 
 const prisma = new PrismaClient();
 
-const rutasEjemplo = express.Router();
+const rutasEnterprise = express.Router();
 
-rutasEjemplo.route('/test').get(async (req, res) => {
+rutasEnterprise.route('/test').get(async (req, res) => {
   //   const clientes = await prisma.test.findMany();
   res.status(200).json({ test: true });
 });
 
-export { rutasEjemplo };
+export { rutasEnterprise };
