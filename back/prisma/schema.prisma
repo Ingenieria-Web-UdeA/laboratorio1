@@ -24,8 +24,8 @@ model Project {
   clientEnterprise   Enterprise @relation(fields: [clientEnterpriseId], references: [id])
   clientEnterpriseId String
   issues             Issue[]
-  clients            User[] @relation("ClientsProject")
-  developers         User[] @relation("developerProject")
+  clients            User[]     @relation("ClientsProject")
+  developers         User[]     @relation("developerProject")
 }
 
 model Issue {
@@ -39,7 +39,9 @@ model Issue {
   closeDate    DateTime
   projectId    String
   project      Project            @relation(fields: [projectId], references: [id])
-  IssueComment IssueComment[]
+  IssueComments IssueComment[]
+  developerId  String
+  developer    User               @relation(fields: [developerId], references: [id])
 }
 
 enum Enum_IssueType {
@@ -71,8 +73,10 @@ model User {
   enterprise        Enterprise     @relation(fields: [enterpriseId], references: [id])
   role              Enum_Role
   comments          IssueComment[]
-  clientProjects    Project[] @relation("ClientsProject")
-  developerProjects Project[] @relation("developerProject")
+  clientProjects    Project[]      @relation("ClientsProject")
+  developerProjects Project[]      @relation("developerProject")
+  Issues            Issue[]
+
 }
 
 enum Enum_Role {
