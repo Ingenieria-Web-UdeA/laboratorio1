@@ -5,12 +5,14 @@ import CrearEmpresa from 'pages/CrearEmpresa';
 import CrearProyecto from 'pages/CrearProyecto';
 import CrearUsuario from 'pages/CrearUsuario';
 import CrearIssue from 'pages/CrearIssue';
+import Login from 'pages/Login';
 import PublicLayout from './layouts/PublicLayout';
 import './styles/globals.css';
 
 const App = () => (
   <BrowserRouter>
     <Routes>
+      <Route path='' element={<Login />} />
       <Route path='/' element={<PublicLayout />}>
         <Route path='CrearEmpresas' element={<CrearEmpresa />} />
         <Route path='CrearProyecto' element={<CrearProyecto />} />

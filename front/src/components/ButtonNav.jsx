@@ -4,6 +4,7 @@
 import React from 'react';
 import Image from 'components/1.svg';
 import { NavLink } from 'react-router-dom';
+import { Dropdown } from 'rsuite';
 
 const ButtonNav = ({ name, ruta }) => (
   <NavLink to={ruta}>
