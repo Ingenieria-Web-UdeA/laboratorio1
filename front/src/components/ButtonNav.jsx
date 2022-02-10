@@ -7,15 +7,12 @@ import { NavLink } from 'react-router-dom';
 import { Dropdown } from 'rsuite';
 
 const ButtonNav = ({ name, ruta }) => (
-  <div className='flex flex-row gap-x-3 my-2 px-2 rounded-[5px] hover:bg-gray-500 cursor-pointer'>
-    <Dropdown>
-      <span className='my-2 text-[20px] text-white'>{name}</span>
-      <img className='fill-white' src={Image} width='20' height='20' />
-      <Dropdown.Item>
-        <NavLink to={ruta} />
-      </Dropdown.Item>
-    </Dropdown>
-  </div>
+  <NavLink to={ruta}>
+    <div className='flex flex-row gap-x-3 my-2 px-2 rounded-[5px] hover:bg-gray-500 cursor-pointer'>
+      <span className='my-2 text-[20px] text-colorBlanco'>{name}</span>
+      <img className='stroke-colorBlanco' src={Image} width='20' height='20' />
+    </div>
+  </NavLink>
 );
 
 export default ButtonNav;
