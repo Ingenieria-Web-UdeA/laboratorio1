@@ -4,14 +4,18 @@
 import React from 'react';
 import Image from 'components/1.svg';
 import { NavLink } from 'react-router-dom';
+import { Dropdown } from 'rsuite';
 
 const ButtonNav = ({ name, ruta }) => (
-  <NavLink to={ruta}>
-    <div className='flex flex-row gap-x-3 my-2 px-2 rounded-[5px] hover:bg-gray-500 cursor-pointer'>
+  <div className='flex flex-row gap-x-3 my-2 px-2 rounded-[5px] hover:bg-gray-500 cursor-pointer'>
+    <Dropdown>
       <span className='my-2 text-[20px] text-white'>{name}</span>
       <img className='fill-white' src={Image} width='20' height='20' />
-    </div>
-  </NavLink>
+      <Dropdown.Item>
+        <NavLink to={ruta} />
+      </Dropdown.Item>
+    </Dropdown>
+  </div>
 );
 
 export default ButtonNav;
