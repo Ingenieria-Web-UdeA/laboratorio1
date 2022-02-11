@@ -2,7 +2,7 @@
 import React from 'react';
 import useFormData from 'hooks/useFormData';
 import Input from 'components/Input';
-import logo from 'components/2.svg';
+import logo from 'assets/2.svg';
 
 const Login = () => {
   const { form, updateFormData } = useFormData();

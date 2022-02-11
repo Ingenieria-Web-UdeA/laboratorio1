@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable no-restricted-imports */
 import React from 'react';
-import ButtonNav from './ButtonNav';
-import logo from './2.svg';
+import ButtonNav from 'components/ButtonNav';
+import logo from 'assets/2.svg';
 
 const Navbar = () => (
   <nav className='flex flex-row w-full bg-colorNegro items-center px-4 justify-between '>
@@ -11,10 +11,26 @@ const Navbar = () => (
       <span className='text-colorBlanco text-2xl pl-4'>Bit software</span>
     </div>
     <div className='flex flex-row gap-x-3 '>
-      <ButtonNav name='Usuarios' ruta='/CrearUsuario' />
-      <ButtonNav name='Empresas' ruta='/CrearEmpresas' />
-      <ButtonNav name='Proyectos' ruta='/CrearProyecto' />
-      <ButtonNav name='Issues' ruta='/Crearissue' />
+      <ButtonNav
+        names={['crear Empresa']}
+        rutas={['/CrearEmpresa']}
+        title='Empresa'
+      />
+      <ButtonNav
+        names={['ver proyectos', 'crear proyectos']}
+        rutas={['/proyectos', '/CrearProyecto']}
+        title='Proyecto'
+      />
+      <ButtonNav
+        names={['ver Usuarios', 'crear Usuario']}
+        rutas={['/Usuarios', '/CrearUsuario']}
+        title='Usuario'
+      />
+      <ButtonNav
+        names={['ver Issues', 'crear Issue']}
+        rutas={['/Issues', '/CrearIssue']}
+        title='Issue'
+      />
     </div>
     <div className=''>
       <span className='text-colorBlanco text-2xl justify-self-end'>
