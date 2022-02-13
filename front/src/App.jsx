@@ -9,6 +9,7 @@ import Login from 'pages/Login';
 import Proyectos from 'pages/proyecto/Proyectos';
 import PublicLayout from 'layouts/PublicLayout';
 import './styles/globals.css';
+import Issues from 'pages/issue/Issues';
 
 const App = () => (
   <BrowserRouter>
@@ -19,6 +20,9 @@ const App = () => (
         <Route path='CrearProyecto' element={<CrearProyecto />} />
         <Route path='CrearUsuario' element={<CrearUsuario />} />
         <Route path='CrearIssue' element={<CrearIssue />} />
+        <Route path='Proyectos' element={<Proyectos />} />
+        <Route path='Issues' element={<Issues />} />
+        <Route path='Proyectos' element={<Proyectos />} />
         <Route path='Proyectos' element={<Proyectos />} />
       </Route>
     </Routes>
