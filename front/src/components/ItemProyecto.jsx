@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemProyecto = ({ proyecto }) => (
-  <div className=' flex flex-row items-center w-full h-[50px] px-3 justify-between rounded-md  border-colorNegro border-2'>
+  <div className=' flex flex-row items-center w-full h-[50px] px-3 justify-between rounded-md  border-colorNegro border-2 hover:bg-colorAzul cursor-pointer'>
     <span className='text-center text-colorNegro'>{proyecto.name}</span>
     <span className='text-center text-colorNegro fixed left-[800px]'>
       {proyecto.empresa}
