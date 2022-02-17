@@ -4,11 +4,24 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import ItemProyecto from 'components/ItemProyecto';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Proyectos = () => {
   const [proyectos, setProyectos] = useState([]);
 
   useEffect(() => {
+    const getAllProductos = async () => {
+      const options = {
+        method: 'GET',
+        url: 'http://localhost:4000/proyectos',
+        headers: { 'Content-type': 'application/json' },
+      };
+
+      const respuesta = await axios.request(options);
+      setProyectos(respuesta.data.proyectos);
+    };
+
     setProyectos([
       { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
       { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
@@ -47,9 +60,11 @@ const Proyectos = () => {
             <span>Clientes</span>
           </div>
         </div>
-        <div className=' flex items-center rounded-md border-colorNegro border-2 w-full h-[50px] px-3'>
-          <span>Adregar Proyecto</span>
-        </div>
+        <Link to='/crearProyecto'>
+          <div className=' flex items-center rounded-md border-colorNegro border-2 w-full h-[50px] px-3 hover:bg-colorAzul cursor-pointer'>
+            <span>Adregar Proyecto</span>
+          </div>
+        </Link>
 
         {proyectos.map((proyecto) => (
           <ItemProyecto proyecto={proyecto} />

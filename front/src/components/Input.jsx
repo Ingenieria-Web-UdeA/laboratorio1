@@ -1,19 +1,21 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
-const Input = ({ text, name, placeholder, type }) => (
-  <div>
+const Input = ({ text, name, placeholder, type, value, onChange }) => (
+  <div className='w-full'>
     <label
-      className='block text-gray-700 text-sm font-bold mb-2'
+      className='block text-gray-700 text-lg font-bold mb-2 ml-6'
       htmlFor={name}
     >
       {text}
     </label>
     <input
-      className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      className='block border border-grey-light w-full p-3 rounded mb-4'
       name={name}
       type={type}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     />
   </div>
 );
