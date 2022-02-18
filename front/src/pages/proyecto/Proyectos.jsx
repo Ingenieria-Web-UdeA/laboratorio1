@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-const-assign */
@@ -10,23 +11,30 @@ import { Link } from 'react-router-dom';
 const Proyectos = () => {
   const [proyectos, setProyectos] = useState([]);
 
-  useEffect(() => {
-    const getAllProductos = async () => {
-      const options = {
-        method: 'GET',
-        url: 'http://localhost:4000/proyectos',
-        headers: { 'Content-type': 'application/json' },
-      };
-
-      const respuesta = await axios.request(options);
-      setProyectos(respuesta.data.proyectos);
+  const getAllProductos = async () => {
+    const options = {
+      method: 'GET',
+      url: 'http://localhost:4000/proyectos',
+      headers: { 'Content-type': 'application/json' },
     };
 
+    const respuesta = await axios.request(options);
+    setProyectos(respuesta.data.proyectos);
+  };
+
+  useEffect(() => {
+    //getAllProductos();
     setProyectos([
-      { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
-      { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
-      { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
-      { name: 'app', empresa: 'bit', issues: 4, develop: 10, clientes: 30 },
+      {
+        id: 1,
+        name: 'app',
+        empresa: 'bit',
+        issues: 4,
+        develop: 10,
+        clientes: 30,
+        descripcion:
+          'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.',
+      },
     ]);
   }, []);
 
@@ -61,7 +69,7 @@ const Proyectos = () => {
           </div>
         </div>
         <Link to='/crearProyecto'>
-          <div className=' flex items-center rounded-md border-colorNegro border-2 w-full h-[50px] px-3 hover:bg-colorAzul cursor-pointer'>
+          <div className=' flex items-center rounded-md border-colorNegro border-2 w-full h-[50px] px-3 hover:bg-[#d9e0ed] cursor-pointer'>
             <span>Adregar Proyecto</span>
           </div>
         </Link>

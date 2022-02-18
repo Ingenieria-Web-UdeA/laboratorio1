@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CrearEmpresa from 'pages/empresa/CrearEmpresa';
-import CrearProyecto from 'pages/proyecto/CrearProyecto';
+import FormProyecto from 'pages/proyecto/FormProyecto';
 import CrearUsuario from 'pages/usuario/CrearUsuario';
 import CrearIssue from 'pages/issue/CrearIssue';
 import Login from 'pages/Login';
@@ -19,13 +19,13 @@ const App = () => (
       <Route path='' element={<Login />} />
       <Route path='/' element={<PublicLayout />}>
         <Route path='CrearEmpresa' element={<CrearEmpresa />} />
-        <Route path='CrearProyecto' element={<CrearProyecto />} />
+        <Route path='CrearProyecto' element={<FormProyecto />} />
         <Route path='CrearUsuario' element={<CrearUsuario />} />
         <Route path='CrearIssue' element={<CrearIssue />} />
         <Route path='Proyectos' element={<Proyectos />} />
         <Route path='Issues' element={<Issues />} />
         <Route path='Usuarios' element={<Usuarios />} />
-        <Route path='DetallesProyecto' element={<DetallesProyecto />} />
+        <Route path='DetallesProyecto/:id' element={<DetallesProyecto />} />
       </Route>
     </Routes>
   </BrowserRouter>
